@@ -13,8 +13,12 @@ hibernate {
 environments {
     development {
         dataSource {
-            dbCreate = "create-drop" // one of 'create', 'create-drop','update'
-            url = "jdbc:hsqldb:mem:devDB"
+            dialect = 'org.hibernate.dialect.MySQL5InnoDBDialect'
+            dbCreate = 'update'
+	        driverClassName = 'com.mysql.jdbc.Driver'
+	        url = 'jdbc:mysql://localhost/extrack'
+	        username = 'root'
+	        password = 'password'
         }
     }
     test {
